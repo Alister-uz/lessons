@@ -15,17 +15,17 @@ meadow_set = set(meadow)
 
 # выведите на консоль все виды цветов
 all_flowers = garden_set.union(meadow_set)
-print(all_flowers)
+print(', '.join(all_flowers))
 
 # выведите на консоль те, которые растут и там и там
-here_and_there = garden_set.intersection(meadow_set)
-print(here_and_there)
+garden_and_meadow = garden_set.intersection(meadow_set)
+print(', '.join(garden_and_meadow))
 
 
 # выведите на консоль те, которые растут в саду, но не растут на лугу
 only_garden = garden_set.difference(meadow_set)
-print(only_garden)
+print(', '.join(only_garden))
 
 # выведите на консоль те, которые растут на лугу, но не растут в саду
 only_meadow = meadow_set.difference(garden_set)
-print(only_meadow)
+print(', '.join(only_meadow))

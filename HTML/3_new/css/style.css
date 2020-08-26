@@ -49,10 +49,10 @@ a {
 
 .main-content {
   display: flex;
+  height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   background-color: #222020;
 }
 
@@ -85,11 +85,12 @@ a {
 }
 
 /* Стилизация страницы program.html */
+/* Стилизация абзацев, списков, картинок и таблиц будет действовать и на другие страницы, оставлено без указания на родительсткий клиасс, так как на другой странице перечисленного нет. */
 
 p {
-  margin-bottom: 20px;
   padding-left: 180px;
-  padding-right: 180px;
+  padding-right: 180px; /* Добавлен отступ справа, для выравнивания текста по общей ширине страницы*/
+  margin-bottom: 20px;
 }
 
 li a {
@@ -122,8 +123,8 @@ img {
 }
 
 table {
+  margin-left: 160px; /*Добавлено для выравнивания по общей ширине страницы*/
   margin-top: 100px;
-  margin-left: 160px;
   border-collapse: collapse;
 }
 caption {
@@ -150,11 +151,11 @@ tfoot {
  }
 
 .back {
-  padding-left: 30px;
-  background-image: url(../img/return.png);
   background-position: left;
-  background-repeat: no-repeat;
+  padding-left: 30px;
   background-size: 20%;
+  background-repeat: no-repeat;
+  background-image: url(../img/return.png);
  }
 
 .heading {
@@ -165,9 +166,9 @@ tfoot {
 }
 
 .subheading {
+  padding-left: 180px;
   margin-top: 100px;
   margin-bottom: 25px;
-  padding-left: 180px;
   font-size: 36px;
   color: #2f1ce4;
 }

@@ -2,16 +2,8 @@
 # -*- coding: utf-8 -*-
 
 
-def duration(durations):
-    ''' The function takes a list of numbers and returns their sum, rounded to two decimal places.
-    If the list includes a value that is not a number, then the function returns zero '''
-    try:
-        return round(sum(durations), 2)
-    except:
-        return 0
-
 # Есть список песен группы Depeche Mode со временем звучания с точностью до долей минут
-
+from typing import List, Union
 
 violator_songs = [
     ['World in My Eyes', 4.86],
@@ -31,17 +23,11 @@ violator_songs = [
 # где a, это число которое надо округлить, а b количество знаков после запятой
 # более подробно про функцию round смотрите в документации https://docs.python.org/3/search.html?q=round
 
-
-duration_first_three_songs = 0
-first_three_songs = []
-
+duration_songs = 0
 for i in violator_songs:
     if i[0] == 'Halo' or i[0] == 'Enjoy the Silence' or i[0] == 'Clean':  # ищем три заданные песни
-        first_three_songs.append(i[1])
-duration_three_songs = duration(first_three_songs)
-
-print('Три пени звучат ' + str(duration_three_songs) + ' минут')
-
+        duration_songs = round(duration_songs + i[1], 2)
+print('Три пени звучат', duration_songs, ' минут')
 
 # Есть словарь песен группы Yellow со временем звучания с точностью до долей минут
 pocket_universe_songs = {
@@ -61,17 +47,15 @@ pocket_universe_songs = {
 # Распечатайте общее время звучания трех песен: 'On Track', 'To the Sea' и 'Beyond Mirrors'
 #   А другие три песни звучат приблизительно ХХХ минут
 
-
-duration_others_three_songs = 0
-other_three_songs = []
-
+duration_songs = 0
 for key in pocket_universe_songs:  # ищем три другие заданные песни
     if key == 'On Track' or key == 'To the Sea' or key == 'Beyond Mirrors':
-        other_three_songs.append(pocket_universe_songs[key])
-duration_three_songs = duration(other_three_songs)
-
-print('А другие три песни звучат приблизительно ' +
-      str(duration_three_songs) + ' минут')
-
+        duration_songs = duration_songs + pocket_universe_songs[key]
+# NOTE округлять промежуточные ответы в процессе вычислений - терять точность в вычислениях
+duration_three_songs = round(duration_songs)
+print('А другие три песни звучат приблизительно', duration_three_songs, 'минут')
+# NOTE обратите внимание на ответ теперь: было 18 стало 17. Верный ответ - 17.
 # Обратите внимание, что делать много вычислений внутри print() - плохой стиль.
 # Лучше заранее вычислить необходимое, а затем в print(xxx, yyy, zzz)
+
+# зачёт! 🚀

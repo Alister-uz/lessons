@@ -13,7 +13,6 @@ sites = {
 # Составим словарь словарей расстояний между ними
 # расстояние на координатной сетке - ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5
 
-distances = dict()
 moscow = sites['Moscow']
 london = sites['London']
 paris = sites['Paris']
@@ -25,16 +24,21 @@ moscow_paris = ((moscow[0] - paris[0]) ** 2 +
 london_paris = ((london[0] - paris[0]) ** 2 +
                 (london[1] - paris[1]) ** 2) ** 0.5
 
-distances['Moscow'] = {}
-distances['Moscow']['London'] = moscow_london
-distances['Moscow']['Paris'] = moscow_paris
-
-distances['London'] = {}
-distances['London']['Moscow'] = moscow_london
-distances['London']['Paris'] = london_paris
-
-distances['Paris'] = {}
-distances['Paris']['Moscow'] = moscow_paris
-distances['Paris']['London'] = london_paris
+distances = {
+    'Moscow': {
+        'London': moscow_london,
+        'Paris': moscow_paris,
+    },
+    'London': {
+        'Moscow': moscow_london,
+        'Paris': london_paris
+    },
+    'Paris': {
+        'Moscow': moscow_paris,
+        'London': london_paris,
+    },
+}
 
 pprint(distances)
+
+# зачёт! 🚀

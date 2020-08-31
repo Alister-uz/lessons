@@ -44,3 +44,5 @@ print(ingoing_2)
 # 77777.7777
 # False
 # False
+
+# зачёт! 🚀

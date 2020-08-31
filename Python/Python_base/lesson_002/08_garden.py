@@ -29,3 +29,10 @@ print(', '.join(only_garden))
 # выведите на консоль те, которые растут на лугу, но не растут в саду
 only_meadow = meadow_set.difference(garden_set)
 print(', '.join(only_meadow))
+
+# NOTE можно использовать и более компактный способ решения - операторы. Например:
+#           flowers_set = garden_set | meadow_set               # объединения
+#           flower_garden_meadow = garden_set & meadow_set      # пересечение
+#           flower_meadow_only = meadow_set - garden_set        # вычитание
+
+# зачёт! 🚀

@@ -11,4 +11,17 @@
 
 educational_grant, expenses = 10000, 12000
 
-# TODO здесь ваш код
+academic_year = 10
+rise_in_prices = 0.03
+subsidy = 0
+
+x = 1
+while x <= academic_year:
+    if x > 1:
+        expenses += expenses * rise_in_prices
+    subsidy += expenses - educational_grant
+    x += 1
+
+print('Студенту надо попросить', round(subsidy, 2), 'рублей')
+
+# зачёт! 🚀
